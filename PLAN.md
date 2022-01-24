@@ -1,7 +1,7 @@
 ###PLAN
 ## How I will been creating this app.
 
-+ This plan
++ This plan - 0:20
 + Application mockup 
 + Connection to Firebase
 + index.html
