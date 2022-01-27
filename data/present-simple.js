@@ -1,3 +1,4 @@
+export let category = 'Practice your Present Simple!';
 export const data = [
   ["He has blue eyes.", "У него голубые глаза."],
   ["Do he have blue eyes?", "У него голубые глаза?"],
