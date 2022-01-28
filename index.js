@@ -1,53 +1,85 @@
-import { category, data} from '/data/present-simple.js';
+import { category, data } from '/data/present-simple.js';
 
-document.querySelector('.category').textContent = category;
+let maxNumber;
+let current;
 
-console.log(category)
+// Nav
+const presentSimple = document.querySelector('.present-simple')
+const h1 = document.querySelector('.category')
 
-let maxNumber = data.length - 1;
-let current;   // установите максимальное число
+presentSimple.addEventListener('click', menu);
+h1.addEventListener('click', menu);
 
-//console.log(maxNumber);
-//console.log(data[maxNumber]);
+// Card: RUS <-> ENG
+const card = document.querySelector('.card')
+const content = document.querySelector('.card-content')
 
-const rus = document.querySelector('.rus')
-const eng = document.querySelector('.eng')
+card.addEventListener('click', wordToggle);
+
+// Start & Next
+const word = document.querySelector('.card-content-word')
 const btn = document.querySelector('.btn')
 
-showRus();
+btn.addEventListener('click', start);
 
-eng.addEventListener('click', showEng);
-btn.addEventListener('click', btnToggle);
+// Functions
+function menu() {
+  document.querySelector('.category').textContent = category;
+  maxNumber = data.length - 1;
+  current = getRandomInt(maxNumber);
 
+  start();
+
+  presentSimple.classList.add('header-nav-block-item-active');
+}
+
+function start() {
+  if (word.textContent == data[current][0]) {
+    current = getRandomInt(maxNumber);
+
+    card.classList.toggle('card-flip');
+    content.classList.toggle('card-content-flip');
+
+    showRus();
+  }
+  else if (word.textContent == 'RUS' || word.textContent == data[current][1]) {
+    current = getRandomInt(maxNumber);
+
+    word.textContent = data[current][1];
+  }
+}
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
 function showRus() {
-  current = getRandomInt(maxNumber);
-  rus.textContent = data[current][1];
-  eng.textContent = '';
+  word.classList.toggle('eng-show');
+  word.textContent = data[current][1];
 }
-//showRus();
 
 function showEng() {
-  eng.textContent = data[current][0];
+  word.classList.toggle('eng-show');
+  word.textContent = data[current][0];
 }
-//showEng();
 
-function btnToggle() {
-  if (btn.textContent == 'SHOW in English!') {
-    btn.textContent = 'NEXT>>';
-    showEng();
-  }
-  else {
-    btn.textContent = 'SHOW in English!';
+function next() {
+  current = getRandomInt(maxNumber);
+  word.classList.toggle('eng-show');
+  showRus();
+}
+
+//elem.setAttribute(name, value)
+
+function wordToggle() {
+  card.classList.toggle('card-flip');
+  content.classList.toggle('card-content-flip');
+
+  if (word.textContent == data[current][0]) {
     showRus();
   }
-
+  else {
+    showEng();
+  }
 }
-// -------------------------------
-// document.getElementById('divA').textContent = 'This text is different!';
-//
 

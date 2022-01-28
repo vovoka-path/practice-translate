@@ -1,7 +1,7 @@
-export let category = 'Practice your Present Simple!';
+export let category = 'Practice Present Simple:';
 export const data = [
   ["He has blue eyes.", "У него голубые глаза."],
-  ["Do he have blue eyes?", "У него голубые глаза?"],
+  ["Does he have blue eyes?", "У него голубые глаза?"],
   ["He doesn't have blue eyes.", "У него не голубые глаза."],
   ["What color are his eyes?", "Какого цвета у него глаза?"],
   ["She has dark hair.", "У нее темные волосы."],
@@ -32,9 +32,9 @@ export const data = [
   ["He works on weekdays.", "Он работает по будням."],
   ["He works on weekdays.", "Он работает по будням."],
   ["She works till lunch.", "Она работает до обеда."],
-  ["They don't travel very often.", "Они не часто путешествуют."],
-  ["She doesn't travel very often.", "Она не часто путешествует."],
-  ["He does'’t travel very often.", "Он не часто путешествует."],
+  ["They don't travel very often.", "Они не очень часто путешествуют."],
+  ["She doesn't travel very often.", "Она не очень часто путешествует."],
+  ["He does't travel very often.", "Он не очень часто путешествует."],
   ["How much do you travel?", "Как часто ты путешествуешь?"],
   ["Where do you usually travel?", "Куда ты обычно путешествуешь?"],
   ["How often does she travel?", "Как часто она путешествует?"],
@@ -73,8 +73,8 @@ export const data = [
   ["What kind of food does he like best?", "Какую еду он любит больше всего?"],
   ["What kind of food does she like best?", "Какую еду она любит больше всего?"],
   ["What kind of food do they like best?", "Какую еду они любят больше всего?"],
-  ["What kind of food he eats?", "Какую еду он ест?"],
-  ["What kind of food she eats?", "Какую еду она ест?"],
+  ["What kind of food does he eat?", "Какую еду он ест?"],
+  ["What kind of food does she eat?", "Какую еду она ест?"],
   ["She likes Thai food best.", "Ей больше всего нравится тайская еда."],
   ["He likes Thai food best.", "Ему больше всего нравится тайская еда."],
   ["Does he like Thai food best?", "Ему больше нравится тайская еда?"],
