@@ -4,7 +4,6 @@
   --white: #ffffff;
   --btn: #ad4b89;
   --link-hover: #582646;
-
 }
 
 html {
@@ -60,7 +59,8 @@ a:hover {
 
 /* --- HEADER --- */
 
-.header {
+.header,
+.footer {
   padding: 0 20px;
   background-color: #f2f5f7;
 }
@@ -153,15 +153,16 @@ a:hover {
   transition: transform 0.3s;
 }
 
-.card-flip .card-content-flip {
-  transform: rotateX( 180deg ) ;
-  transition: transform 0.2s;
-}
-
 .card-content-flip {
   background: #ECF0E4;
   color: #6D8A3B;
   box-shadow: 0 0 15px rgb(109,138,59,0.3);
+  transition: transform 0.2s;
+}
+
+.card-flip .card-content-flip {
+  transform: rotateX(180deg) ;
+  transition: transform 0.2s;
 }
 
 .word {
@@ -240,5 +241,9 @@ a:hover {
     height: auto;
     font-size: 32px;
     padding: 4% 0;;
+  }
+
+  .footer {
+    font-size: 0.7em;
   }
 }
