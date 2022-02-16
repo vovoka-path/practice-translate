@@ -22,6 +22,18 @@ body {
   width: 100%;
 }
 
+a:link {
+  color:var(--link);
+}
+
+a:visited {
+  color:var(--btn)
+}
+
+a:hover {
+  font-size: 1.1em; 
+}
+
 *,
 *::before,
 *::after {
