@@ -22,6 +22,21 @@ const btn = document.querySelector('.btn')
 
 btn.addEventListener('click', start);
 
+// --- SWIPE ---
+//var container = document.querySelector('.card');
+let listener = SwipeListener(card);
+card.addEventListener('swipe', swipeLeftForNext);
+
+function swipeLeftForNext(e) {
+  var directions = e.detail.directions;
+  
+  if (directions.left) {
+    console.log('Swiped left.');
+  }
+
+  start();
+} 
+
 // Functions
 function menu() {
   document.querySelector('.category').textContent = category;
@@ -53,6 +68,18 @@ function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
+function wordToggle() {
+  card.classList.toggle('card-flip');
+  content.classList.toggle('card-content-flip');
+
+  if (word.textContent == data[current][0]) {
+    showRus();
+  }
+  else {
+    showEng();
+  }
+}
+
 function showRus() {
   word.classList.toggle('eng-show');
   word.textContent = data[current][1];
@@ -71,15 +98,7 @@ function showEng() {
 
 //elem.setAttribute(name, value)
 
-function wordToggle() {
-  card.classList.toggle('card-flip');
-  content.classList.toggle('card-content-flip');
 
-  if (word.textContent == data[current][0]) {
-    showRus();
-  }
-  else {
-    showEng();
-  }
-}
+
+
 
