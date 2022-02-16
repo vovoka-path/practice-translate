@@ -23,7 +23,6 @@ const btn = document.querySelector('.btn')
 btn.addEventListener('click', start);
 
 // --- SWIPE ---
-//var container = document.querySelector('.card');
 let listener = SwipeListener(card);
 card.addEventListener('swipe', swipeLeftForNext);
 
@@ -63,6 +62,9 @@ function start() {
     word.textContent = data[current][1];
   }
 }
+
+// First download
+menu();
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
