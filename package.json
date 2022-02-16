@@ -1,0 +1,22 @@
+{
+  "type": "module",
+  "name": "practice-translate",
+  "version": "1.0.0",
+  "description": "Simple app synced with Firebase.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vovoka-path/practice-translate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vovoka-path/practice-translate/issues"
+  },
+  "homepage": "https://github.com/vovoka-path/practice-translate#readme"
+}

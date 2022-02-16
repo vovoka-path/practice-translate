@@ -69,10 +69,13 @@ body {
   color: #3B6D8A;
 }
 
+.header-nav-block-item:hover {
+  color: #582646;
+  text-decoration: underline;
+}
+
 .header-nav-block-item-active {
   color: #582646;
-  font-weight: 600;
-  text-decoration: underline;
 }
 
 /* --- MAIN --- */
