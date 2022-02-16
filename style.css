@@ -72,7 +72,10 @@ body {
 .header-nav-block-item:hover {
   color: #582646;
   text-decoration: underline;
+<<<<<<< HEAD
   cursor: pointer;
+=======
+>>>>>>> fdbbd3698d2729130ceee136bb04a40decb68899
 }
 
 .header-nav-block-item-active {
