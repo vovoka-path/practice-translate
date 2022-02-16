@@ -5,7 +5,7 @@ export const data = [
   ["He doesn't have blue eyes.", "У него не голубые глаза."],
   ["What color are his eyes?", "Какого цвета у него глаза?"],
   ["She has dark hair.", "У нее темные волосы."],
-  ["Do she have dark hair?", "У нее темные волосы?"],
+  ["Does she have dark hair?", "У нее темные волосы?"],
   ["She doesn't have dark hair.", "У нее не темные волосы."],
   ["What color are her hair?", "Какого цвета у нее волосы?"],
   ["You work very hard.", "Ты очень много работаешь. (hard)"],
@@ -49,7 +49,7 @@ export const data = [
   ["Do they prefer seafood?", "Они предпочитают морепродукты?"],
   ["Does she prefer seafood?", "Она предпочитает морепродукты?"],
   ["Does he prefer seafood?", "Он предпочитает морепродукты?"],
-  ["My cats sleeps all day long.", "Мои коты спят весь день."],
+  ["My cats sleep all day long.", "Мои коты спят весь день."],
   ["Does your cat sleep all day long?", "Ваша кошка спит весь день?"],
   ["He doesn't spend much time shopping.", "Он не проводит много времени в магазинах."],
   ["Does she spend a lot of time shopping?", "Она много времени проводит в магазинах?"],
@@ -99,3 +99,5 @@ export const data = [
   ["Does he need anything?", "Ему что-нибудь нужно?"],
   ["Do I need anything?", "Мне что-нибудь нужно?"],
 ]
+
+export default './present-simple.js'

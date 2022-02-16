@@ -1,4 +1,4 @@
-import { category, data } from '/data/present-simple.js';
+import { category, data } from './data/present-simple.js';
 
 let maxNumber;
 let current;
@@ -63,11 +63,11 @@ function showEng() {
   word.textContent = data[current][0];
 }
 
-function next() {
-  current = getRandomInt(maxNumber);
-  word.classList.toggle('eng-show');
-  showRus();
-}
+// function next() {
+//   current = getRandomInt(maxNumber);
+//   word.classList.toggle('eng-show');
+//   showRus();
+// }
 
 //elem.setAttribute(name, value)
 
