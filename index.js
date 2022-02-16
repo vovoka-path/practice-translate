@@ -23,17 +23,18 @@ const btn = document.querySelector('.btn')
 btn.addEventListener('click', start);
 
 // --- SWIPE ---
+// https://www.npmjs.com/package/swipe-listener
 let listener = SwipeListener(card);
 card.addEventListener('swipe', swipeLeftForNext);
 
 function swipeLeftForNext(e) {
   var directions = e.detail.directions;
   
-  if (directions.left) {
+  if (directions.left || directions.top) {
     console.log('Swiped left.');
+    start();
   }
 
-  start();
 } 
 
 // Functions
