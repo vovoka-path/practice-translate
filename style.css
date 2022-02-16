@@ -2,6 +2,9 @@
   --bg-dark: #000000;
   --gold: #BDAE82;
   --white: #ffffff;
+  --btn: #ad4b89;
+  --link-hover: #582646;
+
 }
 
 html {
@@ -134,7 +137,7 @@ body {
   width: 100%;
   background: #f2f5f7;
   color: #3B6D8A;
-  box-shadow: 0 0 15px rgba(129,161,180,0.1);
+  box-shadow: 0 0 15px rgba(129,161,180,0.3);
   transition: transform 0.3s;
 }
 
@@ -146,7 +149,7 @@ body {
 .card-content-flip {
   background: #ECF0E4;
   color: #6D8A3B;
-  box-shadow: 0 0 15px rgb(109,138,59,0.1);
+  box-shadow: 0 0 15px rgb(109,138,59,0.3);
 }
 
 .word {
@@ -167,7 +170,9 @@ body {
   transform: rotateX( 180deg );
 }
 
-.card-content-word {}
+.card-content-word {
+  text-shadow: 0 0 15px rgb(109,138,59,0.3);
+}
 
 .btn {
   display: flex;
@@ -179,9 +184,13 @@ body {
   font-size: 48px;
   float: left;
   perspective: 500px;
-  background: #582646; /* #f2f5f7; */
+  background: var(--btn); /* #f2f5f7; */
   color: white; /* #81a1b4; */
   box-shadow: 0 0 15px rgb(138,59,109,0.3);
+}
+
+.btn-text {
+  text-shadow: 0 0 10px rgb(255,255,255,0.3);
 }
 
 /* --- FOOTER --- */
@@ -202,17 +211,22 @@ body {
 
 @media (max-width: 768px) {
 
+  .category {
+    font-size: 18px;
+  }
+
   .section-card {
-    font-size: 36px;
+    font-size: 30px;
     letter-spacing: .1rem;
   }
 
   .card {
-    height: 360px;
+    height: 320px;
   }
 
   .btn {
     height: auto;
-    font-size: 42px;
+    font-size: 32px;
+    padding: 4% 0;;
   }
 }
