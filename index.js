@@ -1,107 +1,141 @@
-import { category, data } from './data/present-simple.js';
+import { data } from "./data/data.js";
+import { info } from "./data/info.js";
+
+const card = document.querySelector(".card");
+const word = document.querySelector(".card-content-word");
 
 let maxNumber;
-let currentNumber;
+let currentExpressionNumber;
+let currentData;
 
-// Nav
-const presentSimple = document.querySelector('.present-simple')
-const h1 = document.querySelector('.category')
+//******** Execute functions calls **********
 
-presentSimple.addEventListener('click', menu);
-h1.addEventListener('click', menu);
+setMenuListeners();
+setButtonListener();
+setCardListener();
+setSwipeListener();
 
-// Card flip: RUS <-> ENG
-const card = document.querySelector('.card')
-const content = document.querySelector('.card-content')
+startWithDefaultCategory();
 
-card.addEventListener('click', wordToggle);
+//******** Main Functions **********
 
-// Start & Next
-const word = document.querySelector('.card-content-word')
-const btn = document.querySelector('.btn')
+function setMenuListeners() {
+  const nav = document.querySelectorAll(".header-nav-block-items");
 
-btn.addEventListener('click', start);
-
-// --- SWIPE ---
-// https://www.npmjs.com/package/swipe-listener
-let listener = SwipeListener(card);
-card.addEventListener('swipe', swipeLeftForNext);
-
-function swipeLeftForNext(e) {
-  const directions = e.detail.directions;
-  
-  if (directions.left || directions.top) {
-    console.log('Swiped left.');
-    start();
-  }
-} 
-
-// Functions
-function menu() {
-  document.querySelector('.category').textContent = category;
-  maxNumber = data.length - 1;
-  currentNumber = getRandomInt(maxNumber);
-
-  start();
-
-  presentSimple.classList.add('header-nav-block-item-active');
+  nav.forEach((item) => {
+    item.addEventListener("click", setCategory);
+  });
 }
 
-function start() {
-  if (word.textContent == data[currentNumber][0]) {
-    currentNumber = getRandomInt(maxNumber);
+function setButtonListener() {
+  const btn = document.querySelector(".btn");
 
-    card.classList.toggle('card-flip');
-    content.classList.toggle('card-content-flip');
+  btn.addEventListener("click", showNextExpression);
+}
 
+function setCardListener() {
+  card.addEventListener("click", switchLanguages);
+}
+
+function setSwipeListener() {
+  // https://www.npmjs.com/package/swipe-listener
+
+  let listener = SwipeListener(card);
+  card.addEventListener("swipe", swipeToNext);
+
+  function swipeToNext(e) {
+    const directions = e.detail.directions;
+
+    if (directions.left || directions.top) {
+      showNextExpression();
+    }
+  }
+}
+
+function startWithDefaultCategory() {
+  const classFirstInMenuItem = document.querySelector(".header-nav-block-item")
+    .classList[1];
+  currentData = data[classFirstInMenuItem].expressions;
+  maxNumber = currentData.length - 1;
+  currentExpressionNumber = getRandomInt(maxNumber);
+  word.textContent = currentData[currentExpressionNumber][1];
+}
+
+//******** Additional Functions **********
+
+function setCategory(e) {
+  const secondClassInMenuItem = e.target.classList[1];
+  const isWrongClick = e.target.classList[0] === "header-nav-block-items";
+  //console.log('e.target.classList = ' + e.target.classList[0]);
+
+  if (secondClassInMenuItem === "info-button") {
+    toggleInfo();
+  } else if (!isWrongClick) {
+    const h1 = document.querySelector(".category-h1");
+    h1.innerHTML = data[secondClassInMenuItem].category + ":";
+
+    currentData = data[secondClassInMenuItem].expressions;
+    maxNumber = currentData.length - 1;
+    currentExpressionNumber = getRandomInt(maxNumber);
+    word.textContent = currentData[currentExpressionNumber][1];
+
+    showNextExpression();
+  }
+}
+
+function toggleInfo() {
+  const infoElement = document.querySelector(".section-info");
+  const infoText = infoElement.querySelector(".info-text");
+
+  infoText.innerHTML = info;
+  infoElement.classList.toggle("info-none");
+}
+
+function showNextExpression() {
+  const prevExpression = currentData[currentExpressionNumber];
+
+  currentExpressionNumber = getRandomInt(maxNumber);
+
+  if (word.textContent == prevExpression[0]) {
+    flipCard();
     showRus();
-  }
-  else if (word.textContent == 'RUS' || word.textContent == data[currentNumber][1]) {
-    currentNumber = getRandomInt(maxNumber);
-
-    word.textContent = data[currentNumber][1];
+  } else if (
+    word.textContent == "RUS" ||
+    word.textContent == prevExpression[1]
+  ) {
+    word.textContent = currentData[currentExpressionNumber][1];
   }
 }
-
-// First download
-menu();
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * max);
 }
 
-// Card flip
-function wordToggle() {
-  card.classList.toggle('card-flip');
-  content.classList.toggle('card-content-flip');
+function switchLanguages() {
+  const isEng = word.textContent === currentData[currentExpressionNumber][0];
 
-  if (word.textContent == data[currentNumber][0]) {
+  if (isEng) {
     showRus();
-  }
-  else {
+  } else {
     showEng();
   }
+
+  flipCard();
+}
+
+function flipCard() {
+  const content = document.querySelector(".card-content");
+
+  card.classList.toggle("card-flip");
+  content.classList.toggle("card-content-flip");
 }
 
 function showRus() {
-  word.classList.toggle('eng-show');
-  word.textContent = data[currentNumber][1];
+  word.classList.toggle("eng-show");
+  word.textContent = currentData[currentExpressionNumber][1];
 }
 
 function showEng() {
-  word.classList.toggle('eng-show');
-  word.textContent = data[currentNumber][0];
+  word.classList.toggle("eng-show");
+  word.textContent = currentData[currentExpressionNumber][0];
 }
-
-// function next() {
-//   current = getRandomInt(maxNumber);
-//   word.classList.toggle('eng-show');
-//   showRus();
-// }
-
-//elem.setAttribute(name, value)
-
-
-
-
-

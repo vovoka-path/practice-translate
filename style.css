@@ -4,6 +4,10 @@
   --white: #ffffff;
   --btn: #ad4b89;
   --link-hover: #582646;
+  --text-blue: #3B6D8A;
+  --bg-blue: #f2f5f7;
+  --text-green: #6D8A3B;
+  --bg-green: #ECF0E4;
 }
 
 html {
@@ -39,6 +43,11 @@ a:hover {
   box-sizing: inherit;
 }
 
+li, ol {
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+
 .main {
   display: flex;
   flex-direction: column;
@@ -62,7 +71,44 @@ a:hover {
 .header,
 .footer {
   padding: 0 20px;
-  background-color: #f2f5f7;
+  background-color: var(--bg-blue);
+}
+
+/* -- INFO --*/
+.section-info {
+  display: contents;
+  margin: 0 2% 2%;
+  padding: 0 4%;
+  width: 100vw;
+  height: 100vh;
+}
+
+.info-none {
+  display: none;
+}
+
+.info-text {
+  max-width: 85%;
+  margin: 0px auto;
+  padding: 30px;
+  text-align: left;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--text-blue);
+  background-color: var(--bg-blue);
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(129,161,180,0.3);
+}
+
+.info-button {
+  border: 1px solid var(--text-blue);
+  border-radius: 30px;
+  background: var(--text-blue);
+  color: var(--bg-blue);
+}
+
+.info-button:hover {
+  cursor: pointer;
 }
 
 /* --NAV --*/
@@ -81,17 +127,17 @@ a:hover {
 }
 .header-nav-block-item {
   list-style: none;
-  color: #3B6D8A;
+  color: var(--text-blue);
 }
 
 .header-nav-block-item:hover {
-  color: #582646;
+  color: var(--link-hover);
   text-decoration: underline;
   cursor: pointer;
 }
 
 .header-nav-block-item-active {
-  color: #582646;
+  color: var(--link-hover);
 }
 
 /* --- MAIN --- */
@@ -101,7 +147,6 @@ a:hover {
   margin: 0 2% 2%;
   text-align: center;
   font-size: 28px;
-  font-style: italic;
 }
 
 .category:hover {
@@ -109,7 +154,7 @@ a:hover {
 }
 
 .category-h1 {
-  color: #582646;
+  color: var(--btn);
 }
 
 /* -- CARD -- */
@@ -147,15 +192,15 @@ a:hover {
   justify-content: space-around;
   padding: 1%;
   width: 100%;
-  background: #f2f5f7;
-  color: #3B6D8A;
+  background: var(--bg-blue);
+  color: var(--text-blue);
   box-shadow: 0 0 15px rgba(129,161,180,0.3);
   transition: transform 0.3s;
 }
 
 .card-content-flip {
-  background: #ECF0E4;
-  color: #6D8A3B;
+  background: var(--bg-green);
+  color: var(--text-green);
   box-shadow: 0 0 15px rgb(109,138,59,0.3);
   transition: transform 0.2s;
 }
@@ -215,7 +260,7 @@ a:hover {
   align-items: center;
   margin: 0 auto;
   width: 50%;
-  color: #3B6D8A;
+  color: var(--text-blue);
   height: 50px;
 }
 
