@@ -87,8 +87,47 @@ function toggleInfo() {
   const infoElement = document.querySelector(".section-info");
   const infoText = infoElement.querySelector(".info-text");
 
+  if (infoElement.classList.contains('info-none')) {
+    console.log('speech = ' + currentData[currentExpressionNumber][0]);
+
+    // let synth = window.speechSynthesis;
+    // var utterThis = new SpeechSynthesisUtterance(currentData[currentExpressionNumber][0]);
+    // synth.speak(utterThis);
+
+    // speechSynthesis.speak(new SpeechSynthesisUtterance(currentData[currentExpressionNumber][0]));
+
+    var msg = new SpeechSynthesisUtterance();
+    msg.volume = 0.5; // From 0 to 1
+    msg.text = currentData[currentExpressionNumber][0];
+    window.speechSynthesis.speak(msg);
+
+    // window.utterances = [];
+    // var utterance = new SpeechSynthesisUtterance( 'hello' );
+    // utterances.push( utterance );
+    // speechSynthesis.speak( utterance );
+
+    // speak(currentData[currentExpressionNumber][0], )
+
+    // console.log("utterance", utterThis);
+    // synth.speak(utterThis);
+  }
+
   infoText.innerHTML = info;
   infoElement.classList.toggle("info-none");
+}
+
+function speak( text, onend ) {
+  window.speechSynthesis.cancel();
+  var ssu = new SpeechSynthesisUtterance( text );
+  window.speechSynthesis.speak( ssu );
+  function _wait() {
+    if ( ! window.speechSynthesis.speaking ) {
+      onend();
+      return;
+    }
+    window.setTimeout( _wait, 200 );
+  }
+  _wait();
 }
 
 function showNextExpression() {
