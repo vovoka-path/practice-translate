@@ -12,6 +12,7 @@ let currentData;
 
 setMenuListeners();
 setButtonListener();
+setSpeakButtonListener();
 setCardListener();
 setSwipeListener();
 
@@ -31,6 +32,12 @@ function setButtonListener() {
   const btn = document.querySelector(".btn");
 
   btn.addEventListener("click", showNextExpression);
+}
+
+function setSpeakButtonListener() {
+  const speakButton = document.querySelector(".btn-speaker-icon");
+
+  speakButton.addEventListener("click", speak);
 }
 
 function setCardListener() {
@@ -72,7 +79,7 @@ function setCategory(e) {
     toggleInfo();
   } else if (!isWrongClick) {
     const h1 = document.querySelector(".category-h1");
-    h1.innerHTML = data[secondClassInMenuItem].category + ":";
+    h1.innerHTML = data[secondClassInMenuItem].category;
 
     currentData = data[secondClassInMenuItem].expressions;
     maxNumber = currentData.length - 1;
@@ -87,74 +94,19 @@ function toggleInfo() {
   const infoElement = document.querySelector(".section-info");
   const infoText = infoElement.querySelector(".info-text");
 
-  if (infoElement.classList.contains('info-none')) {
-    console.log('speech = ' + currentData[currentExpressionNumber][0]);
-
-    // let synth = window.speechSynthesis;
-    // var utterThis = new SpeechSynthesisUtterance(currentData[currentExpressionNumber][0]);
-    // synth.speak(utterThis);
-
-    // speechSynthesis.speak(new SpeechSynthesisUtterance(currentData[currentExpressionNumber][0]));
-
-    var msg = new SpeechSynthesisUtterance();
-    msg.volume = 0.5; // From 0 to 1
-    msg.lang = 'en-US';
-    msg.name = 'Microsoft Mark - English (United States)';
-    msg.text = currentData[currentExpressionNumber][0];
-    window.speechSynthesis.speak(msg);
-
-    // get all voices
-    function populateVoiceList() {
-      if(typeof speechSynthesis === 'undefined') {
-        return;
-      }
-    
-      var voices = speechSynthesis.getVoices();
-    
-      for(var i = 0; i < voices.length; i++) {
-        var option = document.createElement('option');
-        option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
-    
-        if(voices[i].default) {
-          option.textContent += ' -- DEFAULT';
-        }
-    
-        option.setAttribute('data-lang', voices[i].lang);
-        option.setAttribute('data-name', voices[i].name);
-        //document.getElementById("voiceSelect").appendChild(option);
-        console.log(option)
-      }
-    }
-    
-    populateVoiceList();
-
-    // window.utterances = [];
-    // var utterance = new SpeechSynthesisUtterance( 'hello' );
-    // utterances.push( utterance );
-    // speechSynthesis.speak( utterance );
-
-    // speak(currentData[currentExpressionNumber][0], )
-
-    // console.log("utterance", utterThis);
-    // synth.speak(utterThis);
-  }
-
   infoText.innerHTML = info;
   infoElement.classList.toggle("info-none");
 }
 
-function speak( text, onend ) {
-  window.speechSynthesis.cancel();
-  var ssu = new SpeechSynthesisUtterance( text );
-  window.speechSynthesis.speak( ssu );
-  function _wait() {
-    if ( ! window.speechSynthesis.speaking ) {
-      onend();
-      return;
-    }
-    window.setTimeout( _wait, 200 );
-  }
-  _wait();
+function speak() {
+  console.log('speak')
+
+  var msg = new SpeechSynthesisUtterance();
+  msg.volume = 0.5; // From 0 to 1
+  msg.lang = 'en-US';
+  msg.name = 'Microsoft Mark - English (United States)';
+  msg.text = currentData[currentExpressionNumber][0];
+  window.speechSynthesis.speak(msg);
 }
 
 function showNextExpression() {
