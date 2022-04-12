@@ -98,8 +98,35 @@ function toggleInfo() {
 
     var msg = new SpeechSynthesisUtterance();
     msg.volume = 0.5; // From 0 to 1
+    msg.lang = 'en-US';
+    msg.name = 'Microsoft Mark - English (United States)';
     msg.text = currentData[currentExpressionNumber][0];
     window.speechSynthesis.speak(msg);
+
+    // get all voices
+    function populateVoiceList() {
+      if(typeof speechSynthesis === 'undefined') {
+        return;
+      }
+    
+      var voices = speechSynthesis.getVoices();
+    
+      for(var i = 0; i < voices.length; i++) {
+        var option = document.createElement('option');
+        option.textContent = voices[i].name + ' (' + voices[i].lang + ')';
+    
+        if(voices[i].default) {
+          option.textContent += ' -- DEFAULT';
+        }
+    
+        option.setAttribute('data-lang', voices[i].lang);
+        option.setAttribute('data-name', voices[i].name);
+        //document.getElementById("voiceSelect").appendChild(option);
+        console.log(option)
+      }
+    }
+    
+    populateVoiceList();
 
     // window.utterances = [];
     // var utterance = new SpeechSynthesisUtterance( 'hello' );
