@@ -1,4 +1,4 @@
-export let category = "Introductory Expressions:";
+export let category = "Introductory Expressions";
 export const expressions = [
   ["I’m sorry if I’m wrong, ", "Простите, если я ошибаюсь, "],
   ["To add to it, ", "Вдобавок, "],

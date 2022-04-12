@@ -232,11 +232,22 @@ li, ol {
   text-shadow: 0 0 15px rgb(109,138,59,0.3);
 }
 
-.btn {
+.btn-block {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
   margin: 0 4%;
+  /* padding: 2%; */
+  height: 10%;
+  font-size: 48px;
+}
+
+.btn {
+  flex-grow: 15;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* margin: 0 4%; */
   padding: 2%;
   height: 10%;
   font-size: 48px;
@@ -249,6 +260,18 @@ li, ol {
 
 .btn-text {
   text-shadow: 0 0 10px rgb(255,255,255,0.3);
+}
+
+.btn-speaker-icon {
+  flex-grow: 1;
+  margin: auto 15px;
+  /* display: flex;
+  align-items: center; */
+  /* flex-direction: row; */
+  /* justify-content: space-around; */
+  width: 52px;
+  height: 52px;
+  background: no-repeat left url('assets/svg/speaker-icon.svg');
 }
 
 /* --- FOOTER --- */
