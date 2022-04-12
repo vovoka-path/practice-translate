@@ -1,5 +1,5 @@
-export let category = 'Practice Present Simple:';
-export const data = [
+export let category = "Present Simple";
+export const expressions = [
   ["He has blue eyes.", "У него голубые глаза."],
   ["Does he have blue eyes?", "У него голубые глаза?"],
   ["He doesn't have blue eyes.", "У него не голубые глаза."],
@@ -51,11 +51,26 @@ export const data = [
   ["Does he prefer seafood?", "Он предпочитает морепродукты?"],
   ["My cats sleep all day long.", "Мои коты спят весь день."],
   ["Does your cat sleep all day long?", "Ваша кошка спит весь день?"],
-  ["He doesn't spend much time shopping.", "Он не проводит много времени в магазинах."],
-  ["Does she spend a lot of time shopping?", "Она много времени проводит в магазинах?"],
-  ["She spends a lot of time shopping.", "Она много времени проводит в магазинах."],
-  ["How much free time do you usually have?", "Сколько у тебя обычно свободного времени?"],
-  ["She doesn't usually have much free time.", "У нее обычно мало свободного времени."],
+  [
+    "He doesn't spend much time shopping.",
+    "Он не проводит много времени в магазинах.",
+  ],
+  [
+    "Does she spend a lot of time shopping?",
+    "Она много времени проводит в магазинах?",
+  ],
+  [
+    "She spends a lot of time shopping.",
+    "Она много времени проводит в магазинах.",
+  ],
+  [
+    "How much free time do you usually have?",
+    "Сколько у тебя обычно свободного времени?",
+  ],
+  [
+    "She doesn't usually have much free time.",
+    "У нее обычно мало свободного времени.",
+  ],
   ["Do you have any free time now?", "У тебя есть свободное время сейчас?"],
   ["Is this your first time here?", "Ты здесь в первый раз?"],
   ["I'm here for the first time.", "Я здесь впервые."],
@@ -71,7 +86,10 @@ export const data = [
   ["What does she do there?", "Что она там делает?"],
   ["What kind of food do you like best?", "Какую еду ты любишь больше всего?"],
   ["What kind of food does he like best?", "Какую еду он любит больше всего?"],
-  ["What kind of food does she like best?", "Какую еду она любит больше всего?"],
+  [
+    "What kind of food does she like best?",
+    "Какую еду она любит больше всего?",
+  ],
   ["What kind of food do they like best?", "Какую еду они любят больше всего?"],
   ["What kind of food does he eat?", "Какую еду он ест?"],
   ["What kind of food does she eat?", "Какую еду она ест?"],
@@ -98,6 +116,11 @@ export const data = [
   ["Does she need anything?", "Ей что-нибудь нужно?"],
   ["Does he need anything?", "Ему что-нибудь нужно?"],
   ["Do I need anything?", "Мне что-нибудь нужно?"],
-]
+  ["I see right through you.", "Я вижу тебя насквозь."],
+  ["You see right through me!", "Ты видишь меня насквозь!"],
+  ["He sees right through you.", "Он видит тебя насквозь."],
+  ["A coffee shop is around the corner.", "Кофейня за углом."],
+  ["Is a coffee shop around the corner?", "Кофейня за углом?"],
+];
 
-export default './present-simple.js'
+export default { category, expressions };
