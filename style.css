@@ -272,6 +272,7 @@ li, ol {
   width: 52px;
   height: 52px;
   background: no-repeat left url('assets/svg/speaker-icon.svg');
+  cursor: pointer;
 }
 
 /* --- FOOTER --- */
