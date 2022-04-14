@@ -121,6 +121,7 @@ export const expressions = [
   ["He sees right through you.", "Он видит тебя насквозь."],
   ["A coffee shop is around the corner.", "Кофейня за углом."],
   ["Is a coffee shop around the corner?", "Кофейня за углом?"],
+  ["What do you need help with?", "В чем тебе нужна помощь?"],
 ];
 
 export default { category, expressions };
