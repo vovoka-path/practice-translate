@@ -8,7 +8,6 @@ export const expressions = [
   ["Besides, ", "Кроме того, "],
   ["In a word, ", "Одним словом, "],
   ["In short, ", "Короче, "],
-  ["Summing it up, ", "Подводя итог, "],
   ["In conclusion, ", "В заключение, "],
   ["We have every reason to believe that ", "Можно полагать, что "],
   ["This play a key role in , ", "Это играет ключевую роль в "],
@@ -52,6 +51,7 @@ export const expressions = [
   ["I am convinced ", "Я убежден "],
   ["I doubt ", "Я сомневаюсь "],
   ["Most unlikely ", "Крайне маловероятно "],
+  ["It is likely that ", "Вполне вероятно, что "],
   ["In contrast to this ", "В отличие от этого "],
   ["You must be joking!", "Ты, должно быть, шутишь! "],
   ["I`m afraid I can`t agree with you.", "Боюсь, я не могу согласиться с вами."],
@@ -63,7 +63,8 @@ export const expressions = [
   ["In the first place, ", "В первую очередь, "],
   ["The first thing that needs to be said is ", "Для начала нужно обсудить следующее "],
   ["It is noticeable that ", "Примечательно, что "],
-  ["In summary (/To summarize) ", "Суммируя "],
+  ["In summary ", "Суммируя "],
+  ["To summarize ", "Подводя итог, "],
   ["After all, ", "В конце концов, "],
   ["From time to time, ", "Время от времени, "],
   ["In order to ", "Для того, чтобы "],
@@ -125,6 +126,7 @@ export const expressions = [
   ["Lastly, ", "И последнее, "],
   ["On the whole, ", "В целом, "],
   ["That's clearly mistalen ", "Это явная ошибка "],
+  ["Make shure ", "Убедитесь,"],
   ["Indeed, ", "И вправду, "],
 ]
 
