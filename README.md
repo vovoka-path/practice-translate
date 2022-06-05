@@ -1,2 +1,3 @@
-# App: Practice fast translation in English. 
-Simple app synced with Firebase.
+## App: Practice fast translation into English. 
+---
+### Deploy: [link to app](https://vovoka-path.github.io/practice-translate/)
